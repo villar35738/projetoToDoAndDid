@@ -21,5 +21,18 @@ namespace ToDoAndDid
         {
 
         }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            IncluirTarefa tarefa = new IncluirTarefa();
+            tarefa.Show();
+        }
+
+        private void ToDo_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'toDoAndDidDataSet.tasks' table. You can move, or remove it, as needed.
+            this.tasksTableAdapter.Fill(this.toDoAndDidDataSet.tasks);
+
+        }
     }
 }
