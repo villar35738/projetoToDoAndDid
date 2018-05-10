@@ -24,8 +24,8 @@ namespace ToDoAndDid
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            ToDo toDo = new ToDo();
-            toDo.Show();
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
 }

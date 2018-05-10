@@ -42,6 +42,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEdit.Location = new System.Drawing.Point(76, 191);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(78, 51);
@@ -51,6 +52,7 @@
             // 
             // BtnRemove
             // 
+            this.BtnRemove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnRemove.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnRemove.Location = new System.Drawing.Point(160, 191);
             this.BtnRemove.Name = "BtnRemove";
@@ -62,6 +64,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 10);
@@ -72,6 +77,7 @@
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLimpar.Location = new System.Drawing.Point(244, 191);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(78, 51);
@@ -81,6 +87,9 @@
             // 
             // txbName
             // 
+            this.txbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txbName.Location = new System.Drawing.Point(132, 12);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(374, 20);
@@ -88,6 +97,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPesquisar.Location = new System.Drawing.Point(328, 191);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -105,6 +115,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 38);
             this.dataGridView1.Name = "dataGridView1";
@@ -125,6 +138,7 @@
             this.Controls.Add(this.btnPesquisar);
             this.Name = "Did";
             this.Text = "Did";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

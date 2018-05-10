@@ -11,3 +11,4 @@ D:\1 - Faculdade\S.I 5°Semestre\LPA\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDo
 D:\1 - Faculdade\S.I 5°Semestre\LPA\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.csproj.CoreCompileInputs.cache
 D:\1 - Faculdade\S.I 5°Semestre\LPA\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.exe
 D:\1 - Faculdade\S.I 5°Semestre\LPA\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.pdb
+D:\1 - Faculdade\S.I 5°Semestre\LPA\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.Menu.resources
