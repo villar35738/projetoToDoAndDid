@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,6 +84,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="tasks.cs" />
+    <Compile Include="tela_login.cs" />
     <Compile Include="ToDo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +94,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="toDoAndDidDataSet.cs">
+      <DependentUpon>toDoAndDidDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="toDoAndDidDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>toDoAndDidDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="toDoAndDidDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>toDoAndDidDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="toDoAndDidDB.cs" />
     <EmbeddedResource Include="Did.resx">
       <DependentUpon>Did.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +129,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\ToDoAndDid.exe.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,6 +149,17 @@
     </None>
     <None Include="toDoAndDidDataSet.xss">
       <DependentUpon>toDoAndDidDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="toDoAndDidDataSet1.xsc">
+      <DependentUpon>toDoAndDidDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="toDoAndDidDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>toDoAndDidDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="toDoAndDidDataSet1.xss">
+      <DependentUpon>toDoAndDidDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

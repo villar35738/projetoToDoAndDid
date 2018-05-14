@@ -19,13 +19,40 @@ namespace ToDoAndDid
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            Cursor.Current = Cursors.WaitCursor;
+            Entrar();
+        }
+
+        public void Entrar()
+        {
+            int id = Convert.ToInt32(txtUsuario.Text);
+            string senha = txtSenha.Text;
+            toDoAndDidDB db = new toDoAndDidDB();
+            var userId = db.tela_login.Select(u => new { u.id_user, u.senha }).Where(l => l.id_user.Equals(id) && l.senha.Equals(senha));
+            if (userId.Count() > 0)
+            {
+                Menu menu = new Menu();
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos!");
+            }
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

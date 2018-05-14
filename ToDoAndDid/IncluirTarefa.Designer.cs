@@ -64,6 +64,7 @@
             // 
             // txtDataI
             // 
+            this.txtDataI.Enabled = false;
             this.txtDataI.Location = new System.Drawing.Point(96, 34);
             this.txtDataI.Name = "txtDataI";
             this.txtDataI.Size = new System.Drawing.Size(100, 20);
@@ -77,6 +78,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnLimpar
             // 
@@ -86,6 +88,7 @@
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnCancelar
             // 
@@ -109,7 +112,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "IncluirTarefa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IncluirTarefa";
+            this.Load += new System.EventHandler(this.IncluirTarefa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

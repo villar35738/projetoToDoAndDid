@@ -30,8 +30,15 @@ namespace ToDoAndDid
 
         private void ToDo_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'toDoAndDidDataSet1.tasks' table. You can move, or remove it, as needed.
+            this.tasksTableAdapter1.Fill(this.toDoAndDidDataSet1.tasks);
             // TODO: This line of code loads data into the 'toDoAndDidDataSet.tasks' table. You can move, or remove it, as needed.
-            this.tasksTableAdapter.Fill(this.toDoAndDidDataSet.tasks);
+            //this.tasksTableAdapter.Fill(this.toDoAndDidDataSet.tasks);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -16,5 +16,31 @@ namespace ToDoAndDid
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string titulo = txtTitulo.Text;
+            string data = DateTime.Now.ToShortDateString();
+            toDoAndDidDB db = new toDoAndDidDB();
+            tasks task = new tasks();
+
+            task.titulo_task = titulo;
+            task.data_abertura = Convert.ToDateTime(data);
+
+            db.tasks.Add(task);
+            db.SaveChanges();
+
+            MessageBox.Show("Tarefa adicionada com sucesso!");
+        }
+
+        private void IncluirTarefa_Load(object sender, EventArgs e)
+        {
+            txtDataI.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtTitulo.Clear();
+        }
     }
 }
