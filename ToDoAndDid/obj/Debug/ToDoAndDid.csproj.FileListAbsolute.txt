@@ -29,3 +29,21 @@ D:\GIT Projects\ToDoAndDid\Nova pasta\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToD
 D:\GIT Projects\ToDoAndDid\Nova pasta\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.csproj.CoreCompileInputs.cache
 D:\GIT Projects\ToDoAndDid\Nova pasta\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.exe
 D:\GIT Projects\ToDoAndDid\Nova pasta\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.pdb
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\ToDoAndDid.exe.config
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\ToDoAndDid.exe
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\ToDoAndDid.pdb
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\EntityFramework.dll
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\EntityFramework.xml
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.csprojResolveAssemblyReference.cache
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.Did.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.IncluirTarefa.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.Login.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.Menu.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.ToDo.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.Properties.Resources.resources
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.csproj.GenerateResource.Cache
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.csproj.CoreCompileInputs.cache
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.exe
+D:\GIT Projects\ToDoAndDid\projetoToDoAndDid\ToDoAndDid\obj\Debug\ToDoAndDid.pdb

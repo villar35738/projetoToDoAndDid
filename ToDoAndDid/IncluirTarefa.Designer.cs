@@ -114,6 +114,7 @@
             this.Name = "IncluirTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IncluirTarefa";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IncluirTarefa_FormClosed);
             this.Load += new System.EventHandler(this.IncluirTarefa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

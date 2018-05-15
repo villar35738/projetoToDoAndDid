@@ -134,6 +134,7 @@
             this.BtnRemove.Text = "Deletar Selecionada";
             this.BtnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnRemove.UseVisualStyleBackColor = true;
+            this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // btnEdit
             // 
@@ -164,7 +165,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(613, 147);
             this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idtaskDataGridViewTextBoxColumn
             // 

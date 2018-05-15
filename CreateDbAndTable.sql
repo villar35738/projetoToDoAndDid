@@ -1,3 +1,5 @@
+use toDoAndDid
+
 create database toDoAndDid;
 
 CREATE TABLE tasks(
@@ -9,11 +11,12 @@ CREATE TABLE tasks(
 
 CREATE TABLE tela_login(
 	id_user INT PRIMARY KEY IDENTITY,
-	nome_user VARCHAR(255) NOT NULL
+	nome_user VARCHAR(255) NOT NULL,
+	senha VARCHAR(255) NOT NULL
 );
 
 INSERT INTO tasks(titulo_task, data_abertura) VALUES('Entrega 3 do projeto de LPA', '2018-05-09');
-INSERT INTO tela_login VALUES('Daniel');
+INSERT INTO tela_login VALUES('Daniel', '1234');
 
 select * from tasks;
 select * from tela_login;

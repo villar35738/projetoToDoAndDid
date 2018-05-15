@@ -31,15 +31,31 @@ namespace ToDoAndDid
         private void ToDo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'toDoAndDidDataSet1.tasks' table. You can move, or remove it, as needed.
-            this.tasksTableAdapter1.Fill(this.toDoAndDidDataSet1.tasks);
+            fillTable();
             // TODO: This line of code loads data into the 'toDoAndDidDataSet.tasks' table. You can move, or remove it, as needed.
             //this.tasksTableAdapter.Fill(this.toDoAndDidDataSet.tasks);
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void fillTable()
         {
+            this.tasksTableAdapter1.Fill(this.toDoAndDidDataSet1.tasks);
+        }
 
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            toDoAndDidDB db = new toDoAndDidDB();
+            
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                var row = item.Index;
+                var rowId = item.DataGridView.SelectedCells[0].Value;
+                dataGridView1.Rows.RemoveAt(row);
+                tasks task = db.tasks.Find(rowId);
+                db.tasks.Remove(task);
+                db.SaveChanges();
+            }
         }
     }
 }

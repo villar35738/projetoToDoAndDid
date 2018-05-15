@@ -19,6 +19,7 @@ namespace ToDoAndDid
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string titulo = txtTitulo.Text;
             string data = DateTime.Now.ToShortDateString();
             toDoAndDidDB db = new toDoAndDidDB();
@@ -30,7 +31,11 @@ namespace ToDoAndDid
             db.tasks.Add(task);
             db.SaveChanges();
 
-            MessageBox.Show("Tarefa adicionada com sucesso!");
+            MessageBox.Show("Tarefa adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ToDo todo = new ToDo();
+            todo.fillTable();
+
+            this.Close();
         }
 
         private void IncluirTarefa_Load(object sender, EventArgs e)
@@ -40,7 +45,24 @@ namespace ToDoAndDid
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            Limpar();
+        }
+
+        public void Limpar()
+        {
             txtTitulo.Clear();
+        }
+
+        public void IncluirTarefa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach(var form in Application.OpenForms)
+            {
+                if(form.GetType().Name.Equals("ToDo"))
+                {
+                    ToDo teasjdasjjdasdsa = (ToDo)form;
+                    teasjdasjjdasdsa.fillTable();
+                }
+            }
         }
     }
 }
