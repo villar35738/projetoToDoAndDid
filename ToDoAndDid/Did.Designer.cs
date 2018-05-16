@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.BtnRemove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.txbName = new System.Windows.Forms.TextBox();
+            this.txbTask = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.toDoAndDidDataSet1 = new ToDoAndDid.toDoAndDidDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idtaskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titulotaskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataaberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataencerramentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tasksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toDoAndDidDataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toDoAndDidDataSet11 = new ToDoAndDid.toDoAndDidDataSet1();
+            this.tasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tasksTableAdapter = new ToDoAndDid.toDoAndDidDataSet1TableAdapters.tasksTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet11BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEdit.Location = new System.Drawing.Point(76, 191);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(78, 51);
-            this.btnEdit.TabIndex = 30;
-            this.btnEdit.Text = "Editar Selecionada";
-            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // BtnRemove
             // 
             this.BtnRemove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnRemove.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnRemove.Location = new System.Drawing.Point(160, 191);
+            this.BtnRemove.Location = new System.Drawing.Point(197, 191);
             this.BtnRemove.Name = "BtnRemove";
             this.BtnRemove.Size = new System.Drawing.Size(78, 51);
             this.BtnRemove.TabIndex = 26;
@@ -78,28 +81,30 @@
             // btnLimpar
             // 
             this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLimpar.Location = new System.Drawing.Point(244, 191);
+            this.btnLimpar.Location = new System.Drawing.Point(281, 191);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(78, 51);
             this.btnLimpar.TabIndex = 25;
-            this.btnLimpar.Text = "Limpar Tudo";
+            this.btnLimpar.Text = "Limpar busca";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // txbName
+            // txbTask
             // 
-            this.txbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txbTask.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbName.Location = new System.Drawing.Point(132, 12);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(374, 20);
-            this.txbName.TabIndex = 22;
+            this.txbTask.Location = new System.Drawing.Point(132, 12);
+            this.txbTask.Name = "txbTask";
+            this.txbTask.Size = new System.Drawing.Size(491, 20);
+            this.txbTask.TabIndex = 22;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPesquisar.Image = global::ToDoAndDid.Properties.Resources.Icone_busca5;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPesquisar.Location = new System.Drawing.Point(328, 191);
+            this.btnPesquisar.Location = new System.Drawing.Point(365, 191);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(78, 51);
             this.btnPesquisar.TabIndex = 27;
@@ -115,46 +120,120 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idtaskDataGridViewTextBoxColumn,
+            this.titulotaskDataGridViewTextBoxColumn,
+            this.dataaberturaDataGridViewTextBoxColumn,
+            this.dataencerramentoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tasksBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(10, 38);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(496, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(613, 147);
             this.dataGridView1.TabIndex = 31;
+            // 
+            // idtaskDataGridViewTextBoxColumn
+            // 
+            this.idtaskDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idtaskDataGridViewTextBoxColumn.DataPropertyName = "id_task";
+            this.idtaskDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idtaskDataGridViewTextBoxColumn.Name = "idtaskDataGridViewTextBoxColumn";
+            this.idtaskDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titulotaskDataGridViewTextBoxColumn
+            // 
+            this.titulotaskDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.titulotaskDataGridViewTextBoxColumn.DataPropertyName = "titulo_task";
+            this.titulotaskDataGridViewTextBoxColumn.HeaderText = "TITULO DA TAREFA";
+            this.titulotaskDataGridViewTextBoxColumn.Name = "titulotaskDataGridViewTextBoxColumn";
+            this.titulotaskDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // dataaberturaDataGridViewTextBoxColumn
+            // 
+            this.dataaberturaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataaberturaDataGridViewTextBoxColumn.DataPropertyName = "data_abertura";
+            this.dataaberturaDataGridViewTextBoxColumn.HeaderText = "DATA DE ABERTURA";
+            this.dataaberturaDataGridViewTextBoxColumn.Name = "dataaberturaDataGridViewTextBoxColumn";
+            // 
+            // dataencerramentoDataGridViewTextBoxColumn
+            // 
+            this.dataencerramentoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataencerramentoDataGridViewTextBoxColumn.DataPropertyName = "data_encerramento";
+            this.dataencerramentoDataGridViewTextBoxColumn.HeaderText = "DATA DE FECHAMENTO";
+            this.dataencerramentoDataGridViewTextBoxColumn.Name = "dataencerramentoDataGridViewTextBoxColumn";
+            // 
+            // tasksBindingSource1
+            // 
+            this.tasksBindingSource1.DataMember = "tasks";
+            this.tasksBindingSource1.DataSource = this.toDoAndDidDataSet11BindingSource;
+            // 
+            // toDoAndDidDataSet11BindingSource
+            // 
+            this.toDoAndDidDataSet11BindingSource.DataSource = this.toDoAndDidDataSet11;
+            this.toDoAndDidDataSet11BindingSource.Position = 0;
+            // 
+            // toDoAndDidDataSet11
+            // 
+            this.toDoAndDidDataSet11.DataSetName = "toDoAndDidDataSet1";
+            this.toDoAndDidDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tasksBindingSource
+            // 
+            this.tasksBindingSource.DataMember = "tasks";
+            this.tasksBindingSource.DataSource = this.toDoAndDidDataSet11BindingSource;
+            // 
+            // tasksTableAdapter
+            // 
+            this.tasksTableAdapter.ClearBeforeFill = true;
             // 
             // Did
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 247);
+            this.ClientSize = new System.Drawing.Size(629, 300);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.BtnRemove);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.txbName);
+            this.Controls.Add(this.txbTask);
             this.Controls.Add(this.btnPesquisar);
             this.Name = "Did";
             this.Text = "Did";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Did_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet11BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button BtnRemove;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.TextBox txbName;
+        private System.Windows.Forms.TextBox txbTask;
         private System.Windows.Forms.Button btnPesquisar;
         private toDoAndDidDataSet toDoAndDidDataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource toDoAndDidDataSet11BindingSource;
+        private toDoAndDidDataSet1 toDoAndDidDataSet11;
+        private System.Windows.Forms.BindingSource tasksBindingSource;
+        private toDoAndDidDataSet1TableAdapters.tasksTableAdapter tasksTableAdapter;
+        private System.Windows.Forms.BindingSource tasksBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtaskDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titulotaskDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataaberturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataencerramentoDataGridViewTextBoxColumn;
     }
 }

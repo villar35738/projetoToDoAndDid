@@ -172,6 +172,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\ToDoAndDid.exe" />
     <Content Include="bin\Debug\ToDoAndDid.pdb" />
+    <Content Include="Imagens\Icone-busca5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

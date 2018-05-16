@@ -32,8 +32,6 @@ namespace ToDoAndDid
             db.SaveChanges();
 
             MessageBox.Show("Tarefa adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ToDo todo = new ToDo();
-            todo.fillTable();
 
             this.Close();
         }
@@ -59,8 +57,8 @@ namespace ToDoAndDid
             {
                 if(form.GetType().Name.Equals("ToDo"))
                 {
-                    ToDo teasjdasjjdasdsa = (ToDo)form;
-                    teasjdasjjdasdsa.fillTable();
+                    ToDo todo = (ToDo)form;
+                    todo.fillTable();
                 }
             }
         }

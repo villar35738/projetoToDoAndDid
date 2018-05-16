@@ -34,8 +34,8 @@ SELECT id_task, titulo_task, data_abertura, data_encerramento FROM tasks WHERE (
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id_task, titulo_task, data_abertura, data_encerramento FROM dbo.tasks</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_task, titulo_task, data_abertura, data_encerramento FROM dbo.tasks WHERE data_encerramento IS NULL</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -64,7 +64,18 @@ SELECT id_task, titulo_task, data_abertura, data_encerramento FROM tasks WHERE (
               <Mapping SourceColumn="data_abertura" DataSetColumn="data_abertura" />
               <Mapping SourceColumn="data_encerramento" DataSetColumn="data_encerramento" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="toDoAndDidConnectionString1 (Settings)" DbObjectName="toDoAndDid.dbo.tasks" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDataEnd" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDataEnd" GeneratorSourceName="FillByDataEnd" GetMethodModifier="Public" GetMethodName="GetDataByDataEnd" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDataEnd" UserSourceName="FillByDataEnd">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_task, titulo_task, data_abertura, data_encerramento
+FROM            tasks
+WHERE        (data_encerramento IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -74,7 +85,7 @@ SELECT id_task, titulo_task, data_abertura, data_encerramento FROM tasks WHERE (
   <xs:element name="toDoAndDidDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="toDoAndDidDataSet1" msprop:Generator_UserDSName="toDoAndDidDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tasks" msprop:Generator_TableClassName="tasksDataTable" msprop:Generator_TableVarName="tabletasks" msprop:Generator_TablePropName="tasks" msprop:Generator_RowDeletingName="tasksRowDeleting" msprop:Generator_RowChangingName="tasksRowChanging" msprop:Generator_RowEvHandlerName="tasksRowChangeEventHandler" msprop:Generator_RowDeletedName="tasksRowDeleted" msprop:Generator_UserTableName="tasks" msprop:Generator_RowChangedName="tasksRowChanged" msprop:Generator_RowEvArgName="tasksRowChangeEvent" msprop:Generator_RowClassName="tasksRow">
+        <xs:element name="tasks" msprop:Generator_TableClassName="tasksDataTable" msprop:Generator_TableVarName="tabletasks" msprop:Generator_RowChangedName="tasksRowChanged" msprop:Generator_TablePropName="tasks" msprop:Generator_RowDeletingName="tasksRowDeleting" msprop:Generator_RowChangingName="tasksRowChanging" msprop:Generator_RowEvHandlerName="tasksRowChangeEventHandler" msprop:Generator_RowDeletedName="tasksRowDeleted" msprop:Generator_RowClassName="tasksRow" msprop:Generator_UserTableName="tasks" msprop:Generator_RowEvArgName="tasksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_task" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_task" msprop:Generator_ColumnPropNameInRow="id_task" msprop:Generator_ColumnPropNameInTable="id_taskColumn" msprop:Generator_UserColumnName="id_task" type="xs:int" />

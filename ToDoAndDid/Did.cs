@@ -16,5 +16,21 @@ namespace ToDoAndDid
         {
             InitializeComponent();
         }
+
+        private void Did_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'toDoAndDidDataSet11.tasks' table. You can move, or remove it, as needed.
+            this.tasksTableAdapter.FillByDataEnd(this.toDoAndDidDataSet11.tasks);
+            fillTable();
+        }
+        public void fillTable()
+        {
+            this.tasksTableAdapter.FillByDataEnd(this.toDoAndDidDataSet11.tasks);
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txbTask.Clear();
+        }
     }
 }

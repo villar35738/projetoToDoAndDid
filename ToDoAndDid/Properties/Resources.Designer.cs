@@ -59,5 +59,15 @@ namespace ToDoAndDid.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icone_busca5 {
+            get {
+                object obj = ResourceManager.GetObject("Icone-busca5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
