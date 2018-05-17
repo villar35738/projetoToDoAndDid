@@ -36,6 +36,7 @@ namespace ToDoAndDid
             var userId = db.tela_login.Select(u => new { u.id_user, u.senha }).Where(l => l.id_user.Equals(id) && l.senha.Equals(senha));
             if (userId.Count() > 0)
             {
+                this.Visible = false;
                 Menu menu = new Menu();
                 menu.Show();
             }
@@ -46,11 +47,6 @@ namespace ToDoAndDid
         }
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
         {
 
         }

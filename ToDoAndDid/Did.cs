@@ -16,6 +16,9 @@ namespace ToDoAndDid
         {
             InitializeComponent();
         }
+        
+        public static toDoAndDidDB db = new toDoAndDidDB();
+        public static tasks task = new tasks();
 
         private void Did_Load(object sender, EventArgs e)
         {
@@ -30,7 +33,61 @@ namespace ToDoAndDid
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txbTask.Clear();
+            txtTask.Clear();
+            fillTable();
+            dataGridView1.DataSource = db.tasks.Where(f => f.data_encerramento != null).ToList();
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                if (this.dataGridView1.SelectedRows.Count > 0)
+                {
+                    foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                    {
+                        var row = item.Index;
+                        var rowId = item.DataGridView.SelectedCells[0].Value;
+                        task = db.tasks.Find(rowId);
+                        db.tasks.Remove(task);
+                        db.SaveChanges();
+                        //dataGridView1.Rows.RemoveAt(row);
+                        fillTable();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Para deletar uma tarefa, clique na seta para direita( > ) para selecionar toda a linha.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                string titulo = txtTask.Text;
+                var dados = db.tasks.Where(f => f.titulo_task.Contains(titulo) && f.data_encerramento != null).ToList();
+                dataGridView1.DataSource = dados;
+                dataGridView1.Refresh();
+            }
+            catch (Exception er)
+            {
+
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Did_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Visible = true;
         }
     }
 }

@@ -23,11 +23,18 @@ namespace ToDoAndDid
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            string titulo = txtTask.Text;
-            var dados = db.tasks.Where(f => f.titulo_task.Contains(titulo)).ToList();
+            try
+            {
+                string titulo = txtTask.Text;
+                var dados = db.tasks.Where(f => f.titulo_task.Contains(titulo)).ToList();
 
-            dataGridView1.DataSource = dados;
-            dataGridView1.Refresh();
+                dataGridView1.DataSource = dados;
+                dataGridView1.Refresh();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -49,68 +56,89 @@ namespace ToDoAndDid
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            //toDoAndDidDB db = new toDoAndDidDB();
-
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                if (this.dataGridView1.SelectedRows.Count > 0)
                 {
-                    var row = item.Index;
-                    var rowId = item.DataGridView.SelectedCells[0].Value;
-                    dataGridView1.Rows.RemoveAt(row);
-                    task = db.tasks.Find(rowId);
-                    db.tasks.Remove(task);
-                    db.SaveChanges();
+                    foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                    {
+                        var row = item.Index;
+                        var rowId = item.DataGridView.SelectedCells[0].Value;
+                        task = db.tasks.Find(rowId);
+                        db.tasks.Remove(task);
+                        db.SaveChanges();
+                        //dataGridView1.Rows.RemoveAt(row);
+                        fillTable();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Para deletar uma tarefa, clique na seta para direita( > ) para selecionar toda a linha.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch (Exception er)
             {
-                MessageBox.Show("Para deletar uma tarefa, clique na seta para direita( > ) para selecionar toda a linha.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            //toDoAndDidDB db = new toDoAndDidDB();
-
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                if (this.dataGridView1.SelectedRows.Count > 0)
                 {
-                    var row = item.Index;
-                    var rowId = item.DataGridView.SelectedCells[0].Value;
-                    string data = DateTime.Now.ToShortDateString();
+                    foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                    {
+                        var row = item.Index;
+                        var rowId = item.DataGridView.SelectedCells[0].Value;
+                        string data = DateTime.Now.ToShortDateString();
 
-                    dataGridView1.Rows.RemoveAt(row);
-                    task = db.tasks.Find(rowId);
-                    task.data_encerramento = Convert.ToDateTime(data);
-                    db.Entry(task).State = EntityState.Modified;
-                    db.SaveChanges();
+                        task = db.tasks.Find(rowId);
+                        task.data_encerramento = Convert.ToDateTime(data);
+                        db.Entry(task).State = EntityState.Modified;
+                        db.SaveChanges();
+                        //dataGridView1.Rows.RemoveAt(row);
+                        //dataGridView1.DataSource = toDoAndDidDataSet1.tasks.ToList();
+                        //dataGridView1.Refresh();
+                        fillTable();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Para finalizar uma tarefa, clique na seta para direita( > ) para selecionar toda a linha.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch (Exception er)
             {
-                MessageBox.Show("Para finalizar uma tarefa, clique na seta para direita( > ) para selecionar toda a linha.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            //toDoAndDidDB db = new toDoAndDidDB();
-
-            if (this.dataGridView1.SelectedCells.Count > 0)
+            try
             {
-                foreach (DataGridViewCell item in this.dataGridView1.SelectedCells)
+                if (this.dataGridView1.SelectedCells.Count > 0)
                 {
-                    var rowId = item.OwningRow.Cells[0].Value;
-                    var titulo = item.DataGridView.SelectedCells[0].Value;
-                    task = db.tasks.Find(rowId);
-                    task.titulo_task = (string)titulo;
-                    db.Entry(task).State = EntityState.Modified;
-                    db.SaveChanges();
+                    foreach (DataGridViewCell item in this.dataGridView1.SelectedCells)
+                    {
+                        var rowId = item.OwningRow.Cells[0].Value;
+                        var titulo = item.DataGridView.SelectedCells[0].Value;
+                        task = db.tasks.Find(rowId);
+                        task.titulo_task = (string)titulo;
+                        db.Entry(task).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
                 }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -119,6 +147,12 @@ namespace ToDoAndDid
             txtTask.Clear();
             fillTable();
             dataGridView1.DataSource = toDoAndDidDataSet1.tasks.ToList();
+        }
+
+        private void ToDo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Visible = true;
         }
     }
 }

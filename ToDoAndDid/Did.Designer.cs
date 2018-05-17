@@ -32,7 +32,7 @@
             this.BtnRemove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.txbTask = new System.Windows.Forms.TextBox();
+            this.txtTask = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.toDoAndDidDataSet1 = new ToDoAndDid.toDoAndDidDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -57,13 +57,15 @@
             // 
             this.BtnRemove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnRemove.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnRemove.Location = new System.Drawing.Point(197, 191);
+            this.BtnRemove.Location = new System.Drawing.Point(263, 235);
+            this.BtnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRemove.Name = "BtnRemove";
-            this.BtnRemove.Size = new System.Drawing.Size(78, 51);
+            this.BtnRemove.Size = new System.Drawing.Size(104, 63);
             this.BtnRemove.TabIndex = 26;
             this.BtnRemove.Text = "Deletar Selecionada";
             this.BtnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnRemove.UseVisualStyleBackColor = true;
+            this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // label1
             // 
@@ -72,46 +74,51 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 10);
+            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 28;
             this.label1.Text = "Tarefas feitas:";
             // 
             // btnLimpar
             // 
             this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLimpar.Location = new System.Drawing.Point(281, 191);
+            this.btnLimpar.Location = new System.Drawing.Point(375, 235);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(78, 51);
+            this.btnLimpar.Size = new System.Drawing.Size(104, 63);
             this.btnLimpar.TabIndex = 25;
             this.btnLimpar.Text = "Limpar busca";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // txbTask
+            // txtTask
             // 
-            this.txbTask.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtTask.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbTask.Location = new System.Drawing.Point(132, 12);
-            this.txbTask.Name = "txbTask";
-            this.txbTask.Size = new System.Drawing.Size(491, 20);
-            this.txbTask.TabIndex = 22;
+            this.txtTask.Location = new System.Drawing.Point(176, 15);
+            this.txtTask.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTask.Name = "txtTask";
+            this.txtTask.Size = new System.Drawing.Size(653, 22);
+            this.txtTask.TabIndex = 22;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPesquisar.Image = global::ToDoAndDid.Properties.Resources.Icone_busca5;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPesquisar.Location = new System.Drawing.Point(365, 191);
+            this.btnPesquisar.Location = new System.Drawing.Point(487, 235);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(78, 51);
+            this.btnPesquisar.Size = new System.Drawing.Size(104, 63);
             this.btnPesquisar.TabIndex = 27;
             this.btnPesquisar.Text = "Busca";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // toDoAndDidDataSet1
             // 
@@ -133,9 +140,10 @@
             this.dataaberturaDataGridViewTextBoxColumn,
             this.dataencerramentoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tasksBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 47);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 147);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 181);
             this.dataGridView1.TabIndex = 31;
             // 
             // idtaskDataGridViewTextBoxColumn
@@ -152,7 +160,7 @@
             this.titulotaskDataGridViewTextBoxColumn.DataPropertyName = "titulo_task";
             this.titulotaskDataGridViewTextBoxColumn.HeaderText = "TITULO DA TAREFA";
             this.titulotaskDataGridViewTextBoxColumn.Name = "titulotaskDataGridViewTextBoxColumn";
-            this.titulotaskDataGridViewTextBoxColumn.Width = 123;
+            this.titulotaskDataGridViewTextBoxColumn.Width = 154;
             // 
             // dataaberturaDataGridViewTextBoxColumn
             // 
@@ -194,18 +202,20 @@
             // 
             // Did
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 300);
+            this.ClientSize = new System.Drawing.Size(839, 369);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnRemove);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.txbTask);
+            this.Controls.Add(this.txtTask);
             this.Controls.Add(this.btnPesquisar);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Did";
-            this.Text = "Did";
+            this.Text = "Tarefas finalizadas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Did_FormClosing);
             this.Load += new System.EventHandler(this.Did_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toDoAndDidDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -222,7 +232,7 @@
         private System.Windows.Forms.Button BtnRemove;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.TextBox txbTask;
+        private System.Windows.Forms.TextBox txtTask;
         private System.Windows.Forms.Button btnPesquisar;
         private toDoAndDidDataSet toDoAndDidDataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;

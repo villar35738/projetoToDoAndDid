@@ -20,20 +20,27 @@ namespace ToDoAndDid
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            string titulo = txtTitulo.Text;
-            string data = DateTime.Now.ToShortDateString();
-            toDoAndDidDB db = new toDoAndDidDB();
-            tasks task = new tasks();
+            try
+            {
+                string titulo = txtTitulo.Text;
+                string data = DateTime.Now.ToShortDateString();
+                toDoAndDidDB db = new toDoAndDidDB();
+                tasks task = new tasks();
 
-            task.titulo_task = titulo;
-            task.data_abertura = Convert.ToDateTime(data);
+                task.titulo_task = titulo;
+                task.data_abertura = Convert.ToDateTime(data);
 
-            db.tasks.Add(task);
-            db.SaveChanges();
+                db.tasks.Add(task);
+                db.SaveChanges();
 
-            MessageBox.Show("Tarefa adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tarefa adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            this.Close();
+                this.Close();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Erro: " + er.Message + "\n Tente novamente mais tarde.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void IncluirTarefa_Load(object sender, EventArgs e)

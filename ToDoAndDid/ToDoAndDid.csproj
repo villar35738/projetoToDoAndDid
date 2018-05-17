@@ -102,6 +102,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>toDoAndDidDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="toDoAndDidDataSet1.cs">
+      <DependentUpon>toDoAndDidDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="toDoAndDidDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
